@@ -64,3 +64,6 @@ Async Model, 协作式多任务(cooperatively multi-tasked)
 - `NodeJS`、`Go`、`C#`、`Python`等语言都实现了一套由明确设计主张且“开箱即用”(batteries included)的 `Async/Await` 方案.
 - 而`C++`和`Rust`都采用了一种更为通用(agnostic)的方式。它们提供了构建的基础模块，但将组装成框架的工作留给了你
     - 缺点：上手需要做更多的工作
+
+- [Futures和异步语法](./hello_async)
+- [使用 Async 实现并发](./async_concurrency)

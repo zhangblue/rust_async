@@ -4,6 +4,14 @@ Rust的异步编程主要处理并发性。底层可能利用并行性(取决于
 
 异步运行时负责协调和管理并发任务。
 
+# 入门回顾
+
+- [Futures和异步语法](./hello_async)
+- [使用 Async 实现并发](./async_concurrency)
+- [Stream](./stream)
+- [Traits for Async (异步主要的 Traits)](./traits_for_async)
+- [综合来看：Future、任务和线程](./futures_tasks_threads)
+
 ## 核心概念
 
 并行性(`Parallelism`)：多个执行单元同时处理不同任务。多核处理器可以实现并发与并行
@@ -65,5 +73,7 @@ Async Model, 协作式多任务(cooperatively multi-tasked)
 - 而`C++`和`Rust`都采用了一种更为通用(agnostic)的方式。它们提供了构建的基础模块，但将组装成框架的工作留给了你
     - 缺点：上手需要做更多的工作
 
-- [Futures和异步语法](./hello_async)
-- [使用 Async 实现并发](./async_concurrency)
+## Tokio
+
+- [Tokio 简介](./tokio_introduction)
+- [系统线程 vs 绿色线程](./tokio_os_threads_vs_green_threads)

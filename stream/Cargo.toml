@@ -1,0 +1,8 @@
+[package]
+name = "stream"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+trpl = "0.3.0"
+stream-ext = "0.2.4"

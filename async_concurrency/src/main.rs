@@ -7,8 +7,8 @@ use std::pin::Pin;
 use std::time::Duration;
 
 fn main() {
-    // demo1();
-    // demo2();
+    demo1();
+    demo2();
     racing_future_demo();
     timeout_demo();
 }

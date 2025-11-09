@@ -1,7 +1,7 @@
 fn main() {
-    // sample_stream::steam_demo1();
-    // sample_stream::steam_demo2();
-    // composing_stream::composing_stream_demo1();
+    sample_stream::steam_demo1();
+    sample_stream::steam_demo2();
+    composing_stream::composing_stream_demo1();
     composing_stream::merge_stream_demo();
 }
 

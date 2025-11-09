@@ -1,7 +1,7 @@
 #[tokio::main]
 async fn main() {
-    // tokio::spawn(run());
-    // hello().await;
+    tokio::spawn(run());
+    hello().await;
 
     join_demo::demo().await;
     join_set_demo::demo().await;

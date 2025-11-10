@@ -22,6 +22,7 @@ async fn main() {
         let (mut socket, addr) = listener.accept().await.unwrap();
         tracing::info!("客户端连接：{}", addr);
         tokio::spawn(async move {
+            // 将socket拆分为读写两部分，以便分别处理读取和写入操作
             let (stream_reader, mut stream_writer) = socket.split();
             let mut message = String::new();
             // 读取客户端发送的数据到缓冲区中

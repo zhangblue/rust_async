@@ -1,8 +1,5 @@
 use tokio::io::AsyncBufReadExt;
 use tokio::io::AsyncWriteExt;
-use tokio::io::BufReader;
-use tokio::net::TcpListener;
-use tokio::sync::broadcast;
 
 #[tokio::main]
 async fn main() {
@@ -11,9 +8,11 @@ async fn main() {
     // 设置全局默认的订阅者，这样我们就可以在程序的任何地方使用日志了
     tracing::subscriber::set_global_default(subscriber).unwrap();
 
-    let listener = TcpListener::bind("127.0.0.1:8080").await.unwrap();
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:8080")
+        .await
+        .unwrap();
     tracing::info!("服务器启动, 监听8080端口...");
-    let (tx, _) = broadcast::channel(10);
+    let (tx, _) = tokio::sync::broadcast::channel(10);
 
     loop {
         let tx = tx.clone();
@@ -26,7 +25,7 @@ async fn main() {
             let (stream_reader, mut stream_writer) = socket.split();
             let mut message = String::new();
             // 读取客户端发送的数据到缓冲区中
-            let mut reader = BufReader::new(stream_reader);
+            let mut reader = tokio::io::BufReader::new(stream_reader);
             loop {
                 // select! 宏用于同时等待多个异步操作完成，并执行第一个完成的操作的代码块。
                 // select！模式匹配：pattern = future => handler
